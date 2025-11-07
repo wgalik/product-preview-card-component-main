@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(30, 38%, 92%);
+  color: hsl(212, 21%, 14%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100dvh;
+}
+
+.card {
+  width: 350px;
+  height: 750px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 0.7rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: start;
+}
+@media (min-width: 768px) {
+  .card {
+    width: 600px;
+    height: 450px;
+    flex-direction: row;
+  }
+}
+.card .image {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background-image: url("./images/image-product-mobile.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media (min-width: 768px) {
+  .card .image {
+    aspect-ratio: auto;
+    flex: 0 0 50%;
+    height: 450px;
+    background-image: url("./images/image-product-desktop.jpg");
+  }
+}
+.card article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  padding: 30px;
+}
+@media (min-width: 768px) {
+  .card article {
+    flex: 0 0 50%;
+  }
+}
+.card article h1 {
+  font-family: "Fraunces";
+}
+.card article h2 {
+  font-family: "Fraunces";
+  color: hsl(158, 36%, 37%);
+  font-size: 2rem;
+  position: relative;
+}
+.card article h2 .badge {
+  font-family: "Montserrat";
+  color: hsl(228, 12%, 48%);
+  font-weight: 400;
+  text-decoration: line-through;
+  font-size: 0.8rem;
+  position: absolute;
+  top: 50%;
+  left: 110%;
+  transform: translateY(-50%);
+}
+.card article p {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-style: 14px;
+  color: hsl(228, 12%, 48%);
+  line-height: 1.5;
+}
+.card article p.tag_name {
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}
+.card article button {
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 700;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(158, 36%, 37%);
+  border: none;
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+.card article button .icon {
+  display: inline-block;
+  background-image: url("./images/icon-cart.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 14px;
+  aspect-ratio: 1/1;
+}
+.card article button:hover {
+  background-color: hsl(158, 42%, 18%);
+}/*# sourceMappingURL=style.css.map */

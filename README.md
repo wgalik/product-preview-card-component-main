@@ -5,6 +5,8 @@ This component displays a stylish product card with an image, description, price
 
 ## 📸 Preview
 
+[Site](https://wgalik.github.io/product-preview-card-component-main/)
+
 ## 🎯 Challenge Goal
 
 To build a responsive card layout that matches the given design for both mobile and desktop screens.

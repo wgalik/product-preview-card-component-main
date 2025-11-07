@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+$Green_500: hsl(158, 36%, 37%);
+$Green_700: hsl(158, 42%, 18%);
+$Black: hsl(212, 21%, 14%);
+$Grey: hsl(228, 12%, 48%);
+$Cream: hsl(30, 38%, 92%);
+$White: hsl(0, 0%, 100%);
+$font_Fraunces: "Fraunces";
+$font_Montserrat: "Montserrat";
+
+@mixin flexbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin backgroundImage {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $Cream;
+  color: $Black;
+  @include flexbox;
+  width: 100vw;
+  height: 100dvh;
+}
+
+.card {
+  width: 350px;
+  height: 750px;
+  background-color: $White;
+  border-radius: 0.7rem;
+  overflow: hidden;
+  @include flexbox;
+  flex-direction: column;
+  justify-content: start;
+  @media (min-width: 768px) {
+    width: 600px;
+    height: 450px;
+    flex-direction: row;
+  }
+  .image {
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-image: url("./images/image-product-mobile.jpg");
+
+    @include backgroundImage;
+
+    @media (min-width: 768px) {
+      aspect-ratio: auto;
+      flex: 0 0 50%;
+      height: 450px;
+
+      background-image: url("./images/image-product-desktop.jpg");
+    }
+  }
+  article {
+    @include flexbox;
+
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    padding: 30px;
+    @media (min-width: 768px) {
+      flex: 0 0 50%;
+    }
+    h1 {
+      font-family: $font_Fraunces;
+    }
+    h2 {
+      font-family: $font_Fraunces;
+      color: $Green_500;
+      font-size: 2rem;
+      position: relative;
+      .badge {
+        font-family: $font_Montserrat;
+        color: $Grey;
+        font-weight: 400;
+        text-decoration: line-through;
+        font-size: 0.8rem;
+        position: absolute;
+        top: 50%;
+        left: 110%;
+        transform: translateY(-50%);
+      }
+    }
+    p {
+      font-family: $font_Montserrat;
+      font-weight: 500;
+      font-style: 14px;
+      color: $Grey;
+      line-height: 1.5;
+      &.tag_name {
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+      }
+    }
+    button {
+      font-family: $font_Montserrat;
+      font-size: 14px;
+      font-weight: 700;
+      color: $White;
+      background-color: $Green_500;
+      border: none;
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+      .icon {
+        display: inline-block;
+        background-image: url("./images/icon-cart.svg");
+        @include backgroundImage;
+        width: 14px;
+        aspect-ratio: 1/1;
+      }
+      &:hover {
+        background-color: $Green_700;
+      }
+    }
+  }
+}
